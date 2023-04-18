@@ -1,0 +1,48 @@
+.detailProduct {
+  margin-top: 120px;
+}
+
+.cardDetailProduct {
+  background-color: rgb(219, 215, 211);
+  width: 50rem;
+  height: 20rem;
+  display: flex;
+}
+
+.descriptionProductDetail {
+  padding: 20px 20px;
+  font-size: 18px;
+}
+
+.descriptionValue:nth-child(1) {
+  font-size: larger;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.descriptionValue:last-child {
+  text-align: justify;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .descriptionProductDetail {
+    padding: 15px 15px;
+    font-size: 9px;
+  }
+
+  .descriptionValue:nth-child(1) {
+    margin-bottom: 8px;
+  }
+
+  .descriptionValue:last-child {
+    margin-top: 5px;
+  }
+
+  .image {
+    width: 50%;
+    height: 100%;
+  }
+}

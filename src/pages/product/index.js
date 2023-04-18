@@ -1,7 +1,8 @@
 import Layout from "@/Layout";
-import ProductPage from "../views/product";
+import ProductPage from "../../views/product";
 
 export default function Product({ dataProduct }) {
+  console.log(dataProduct);
   return (
     <Layout>
       <ProductPage dataProduct={dataProduct} />
