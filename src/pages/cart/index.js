@@ -1,3 +1,3 @@
-export default function index() {
+export default function CardPage() {
   return <div>cart page</div>;
 }

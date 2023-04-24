@@ -1,9 +1,9 @@
 import GuestLayout from "@/Layout/GuestLayout";
 import React from "react";
-import style from "../../styles/GuestLayout/Login.module.css";
+import style from "../../styles/GuestLayout/Login.module.scss";
 import Link from "next/link";
 
-export default function index() {
+export default function LoginPage() {
   return (
     <GuestLayout title="Login">
       <form action="" className={style.form}>

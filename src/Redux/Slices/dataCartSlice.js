@@ -38,7 +38,6 @@ const dataCartSlice = createSlice({
       );
       if (itemIndex !== -1) {
         if (state.cartItem[itemIndex].quantity == 1) {
-          // bagaimana cara menghapus data cartItem[itemIndex] tersebut
           state.cartItem = state.cartItem.filter(
             (_, index) => index !== itemIndex
           );

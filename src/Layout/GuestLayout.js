@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../styles/GuestLayout/Login.module.css";
+import style from "../styles/GuestLayout/Login.module.scss";
 
 export default function GuestLayout({ children, title }) {
   return (

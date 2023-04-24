@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setDataTodoList, setValue } from "../../Redux/Slices/TodoSlice";
 import style from "../../styles/TodoList/Todolist.module.css";
 
-const index = () => {
+const TodoListPage = () => {
   const { dataTodoList, value } = useSelector((state) => state.todoList);
   const dispatch = useDispatch();
 
@@ -49,4 +49,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default TodoListPage;
