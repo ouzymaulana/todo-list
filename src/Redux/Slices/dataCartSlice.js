@@ -1,4 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+
+const dataCartPersistConfig = {
+  key: "productCart",
+  storage: storage,
+  whitelist: ["cartItem"],
+};
 
 const dataCartSlice = createSlice({
   name: "productCart",
@@ -50,7 +58,12 @@ const dataCartSlice = createSlice({
   },
 });
 
+const persistedDataCartReducer = persistReducer(
+  dataCartPersistConfig,
+  dataCartSlice.reducer
+);
+
 export const selectDataCart = (state) => state.dataCart;
 export const { setCartItem, incrementQuantity, decrementQuantity } =
   dataCartSlice.actions;
-export default dataCartSlice.reducer;
+export default persistedDataCartReducer;

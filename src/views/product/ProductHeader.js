@@ -31,7 +31,7 @@ const ProductHeader = () => {
         <Link className={style.categoryButton} href="/product/women's clothing">
           women's clothing
         </Link>
-        <Link className={style.categoryButton} href="/product/women's clothing">
+        <Link className={style.categoryButton} href="/cart">
           {cartItem.length !== 0 ? (
             <span className={style.countProductCart}>{cartItem.length}</span>
           ) : (

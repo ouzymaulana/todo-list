@@ -1,0 +1,111 @@
+.cart {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  .orderList {
+    background-color: white;
+    padding: 20px;
+    width: 50rem;
+    height: 100vh;
+    padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+
+    .titlePage {
+      padding: 15px;
+      font-size: 25px;
+      font-weight: 600;
+      background-color: rgb(234, 234, 234);
+    }
+  }
+}
+
+.dataCart {
+  flex: 2.5;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  overflow: auto;
+
+  .orderItem {
+    display: flex;
+    // background-color: aquamarine;
+    // width: 60rem;
+    height: max-content;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    .dataProduct {
+      display: flex;
+      flex: 2.5;
+
+      .image {
+        object-position: center;
+      }
+
+      .productTitle {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+
+        span:first-child {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .subTotalPerItem {
+      flex: 1;
+      font-size: 18px;
+    }
+  }
+}
+
+.incrementDecrementButton {
+  display: flex;
+  align-items: center;
+  border: 3px solid rgb(195, 195, 195);
+  height: max-content;
+
+  .increment,
+  .decrement {
+    padding: 10px;
+    border: none;
+    background-color: white;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .decrement {
+    font-size: 30px;
+  }
+
+  .quantity {
+    margin: 0 10px;
+  }
+}
+
+.orderSummary {
+  background-color: rgb(234, 234, 234);
+  flex: 0.5;
+  font-size: 25px;
+  padding: 20px;
+
+  .subTotal,
+  .total {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.buttonPay {
+  padding: 20px 0;
+  font-size: 20px;
+  color: white;
+  border: none;
+  background-color: black;
+  cursor: pointer;
+}
