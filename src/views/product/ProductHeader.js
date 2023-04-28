@@ -19,16 +19,16 @@ const ProductHeader = () => {
       </div>
       <hr width="100%" color="#CCCCCC"></hr>
       <div className={style.productCategory}>
-        <Link className={style.categoryButton} href="/product/electronics">
+        <Link className={style.categoryButton} href="/electronics">
           electronics
         </Link>
-        <Link className={style.categoryButton} href="/product/jewelery">
+        <Link className={style.categoryButton} href="/jewelery">
           jewelery
         </Link>
-        <Link className={style.categoryButton} href="/product/men's clothing">
+        <Link className={style.categoryButton} href="/men's clothing">
           men's clothing
         </Link>
-        <Link className={style.categoryButton} href="/product/women's clothing">
+        <Link className={style.categoryButton} href="/women's clothing">
           women's clothing
         </Link>
         <Link className={style.categoryButton} href="/cart">

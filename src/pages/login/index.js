@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
+import { isAccessLoginPage } from "@/Helper/checkLogin";
 // import dataUser from "../../../src/../"
 
 export default function LoginPage({ dataUsers }) {
@@ -84,9 +85,15 @@ export default function LoginPage({ dataUsers }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   const res = await fetch(`http://localhost:3000/api/users`);
   const users = await res.json();
+
+  const isLogin = isAccessLoginPage(context.req.cookies.email);
+
+  if (isLogin) {
+    return isLogin;
+  }
 
   return {
     props: {

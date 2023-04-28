@@ -29,7 +29,7 @@ export default function OrderList() {
             <Image
               src={data.image}
               alt="product"
-              width={100}
+              width={120}
               height={100}
               className={style.image}
             />

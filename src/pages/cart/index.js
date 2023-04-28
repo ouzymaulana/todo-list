@@ -6,6 +6,7 @@ import { selectDataCart } from "@/Redux/Slices/dataCartSlice";
 import OrderList from "@/Components/Cart/OrderList";
 import { useEffect, useState } from "react";
 import { formatCurrency } from "@/Helper/formatCurrency";
+import checkLogin from "@/Helper/checkLogin";
 
 export default function CardPage() {
   const { cartItem } = useSelector(selectDataCart);
@@ -52,4 +53,16 @@ export default function CardPage() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context) {
+  const isLogin = checkLogin(context.req.cookies.email);
+
+  if (isLogin) {
+    return isLogin;
+  }
+
+  return {
+    props: {},
+  };
 }

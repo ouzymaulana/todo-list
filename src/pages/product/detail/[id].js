@@ -3,6 +3,7 @@ import Layout from "@/Layout";
 import Image from "next/image";
 import React from "react";
 import style from "../../../styles/DetailProduct.module.css";
+import checkLogin from "@/Helper/checkLogin";
 
 const DetailProduct = ({ productDetail }) => {
   return (
@@ -38,8 +39,21 @@ export default DetailProduct;
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
-  const res = await fetch(`https://fakestoreapi.com/products/${id}`);
-  const productDetail = await res.json();
+
+  let productDetail = [];
+  try {
+    const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+    productDetail = await res.json();
+  } catch (error) {
+    console.error(error);
+  }
+
+  const isLogin = checkLogin(context.req.cookies.email);
+
+  if (isLogin) {
+    return isLogin;
+  }
+
   return {
     props: {
       productDetail,

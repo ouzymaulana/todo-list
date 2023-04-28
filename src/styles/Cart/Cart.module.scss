@@ -42,10 +42,12 @@
       flex: 2.5;
 
       .image {
-        object-position: center;
+        width: 5rem;
+        flex: 0.5;
       }
 
       .productTitle {
+        flex: 2;
         padding: 0 10px;
         display: flex;
         flex-direction: column;
@@ -60,6 +62,8 @@
     .subTotalPerItem {
       flex: 1;
       font-size: 18px;
+      display: flex;
+      justify-content: center;
     }
   }
 }
@@ -67,12 +71,15 @@
 .incrementDecrementButton {
   display: flex;
   align-items: center;
-  border: 3px solid rgb(195, 195, 195);
+  border: 3.5px solid rgb(221, 221, 221);
   height: max-content;
+  width: 8rem;
+  justify-content: space-around;
+  // padding: 5px 5px;
 
   .increment,
   .decrement {
-    padding: 10px;
+    padding: 5px;
     border: none;
     background-color: white;
     font-size: 25px;

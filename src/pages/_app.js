@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import "./../css/style.css";
-import Link from "next/link";
 import store from "@/Redux/Store";
 import { Provider } from "react-redux";
 import Head from "next/head";

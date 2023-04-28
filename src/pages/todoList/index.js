@@ -4,6 +4,7 @@ import Layout from "@/Layout";
 import { useSelector, useDispatch } from "react-redux";
 import { setDataTodoList, setValue } from "../../Redux/Slices/TodoSlice";
 import style from "../../styles/TodoList/Todolist.module.css";
+import checkLogin from "@/Helper/checkLogin";
 
 const TodoListPage = () => {
   const { dataTodoList, value } = useSelector((state) => state.todoList);
@@ -50,3 +51,15 @@ const TodoListPage = () => {
 };
 
 export default TodoListPage;
+
+export async function getServerSideProps(context) {
+  const isLogin = checkLogin(context.req.cookies.email);
+
+  if (isLogin) {
+    return isLogin;
+  }
+
+  return {
+    props: {},
+  };
+}
