@@ -86,11 +86,24 @@ export default function LoginPage({ dataUsers }) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`http://localhost:3000/api/users`);
-  const users = await res.json();
+  let users = [];
+  try {
+    const res = await fetch(`http://localhost:3000/api/users`);
+    users = await res.json();
+  } catch (error) {
+    console.log(error);
+    console.error(error);
+  }
 
   const isLogin = isAccessLoginPage(context.req.cookies.email);
 
+  // const users = [
+  //   {
+  //     id: 1,
+  //     email: "ouzy@gmail.com",
+  //     password: "ouzypwd",
+  //   },
+  // ];
   if (isLogin) {
     return isLogin;
   }

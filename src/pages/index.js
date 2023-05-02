@@ -17,6 +17,8 @@ export async function getServerSideProps(context) {
   try {
     const res = await fetch(`https://fakestoreapi.com/products`);
     dataProduct = await res.json();
+
+    console.log(res);
   } catch (error) {
     console.error(error);
   }
