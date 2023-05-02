@@ -55,6 +55,10 @@ const dataCartSlice = createSlice({
         }
       }
     },
+
+    deleteCartWhenLogout: (state, action) => {
+      state.cartItem = [];
+    },
   },
 });
 
@@ -64,6 +68,10 @@ const persistedDataCartReducer = persistReducer(
 );
 
 export const selectDataCart = (state) => state.dataCart;
-export const { setCartItem, incrementQuantity, decrementQuantity } =
-  dataCartSlice.actions;
+export const {
+  setCartItem,
+  incrementQuantity,
+  decrementQuantity,
+  deleteCartWhenLogout,
+} = dataCartSlice.actions;
 export default persistedDataCartReducer;
